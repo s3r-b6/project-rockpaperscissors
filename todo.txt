@@ -1,0 +1,2 @@
+terminar esta iteración con un juego a 5 rondas y con un contador de quién es el ganador.
+crear una iteración más utilizando valores en lugar de strings.
