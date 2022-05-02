@@ -1,2 +1,1 @@
-terminar esta iteración con un juego a 5 rondas y con un contador de quién es el ganador.
-crear una iteración más utilizando valores en lugar de strings.
+crear una iteración más utilizando valores en lugar de strings; cambiar el switch con mil casos por algo más elegante y utilizar dos contadores diferentes: los puntos del usuario y los puntos del ordenador, de modo que si alguien llega a 3 pare, pero si no, no.
