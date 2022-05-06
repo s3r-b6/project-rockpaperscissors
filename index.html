@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./rps.js"></script>
-</head>
-<body>
-    <button id="RPS-Button" onclick="GameRPS()">Piedra, papel o tijeras!</button> <br>
-    <ul id="app"></ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piedra, papel o tijeras!</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+  <body>
+    <div id="Descripcion">
+      <h1>Piedra, papel o tijeras!</h1>
+      <p>
+        Para jugar, dale al botón de empezar y selecciona usando los botones.
+      </p>
+    </div>
+    <div id="Contador">
+        <h2 class="Contador">1</h2>
+        <h3 class="Contador">-</h3>
+        <h2 class="Contador">2</h2>
+    </div>
+    <div id="app"></div>
+    <br />
+  </body>
 </html>
+
+<script src="./rps.js"></script>

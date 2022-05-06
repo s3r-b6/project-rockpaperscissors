@@ -1,0 +1,30 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+#Descripcion{
+    padding: 2em;
+    background-color: aquamarine;
+}
+
+#Contador{
+    padding: 3em;
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 5em;
+}
+
+.Contador {
+    font-size: 64px;
+    text-align: center;
+    flex:0 0 auto;
+    
+}
+
+h2.Contador{
+    height: 100px;
+    width: 100px;
+}
