@@ -1,30 +1,110 @@
-*{
-    margin:0px;
-    padding: 0px;
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 
-#Descripcion{
-    padding: 2em;
-    background-color: aquamarine;
+#Descripcion {
+  padding: 2em;
+  background-color: aquamarine;
 }
 
-#Contador{
-    padding: 3em;
-    display:flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    gap: 5em;
+#Round{
 }
-
-.Contador {
-    font-size: 64px;
+#Contador {
     text-align: center;
-    flex:0 0 auto;
-    
+
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
 }
 
-h2.Contador{
-    height: 100px;
-    width: 100px;
+#Marcador {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  gap: 6em;
+}
+.Contador {
+  font-size: 64px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+h2.Contador {
+  height: 100px;
+  width: 100px;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  align-content: center;
+  justify-content: center;
+}
+
+#user-selection {
+  display: flex;
+  flex: 1;
+  align-content: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+#comp-selection {
+  display: flex;
+  flex: 1;
+  align-content: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+#comp-text,
+#Botones {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  border-width: 0px;
+  width: 50px;
+  height: 25px;
+}
+
+.rps-img {
+  padding: 1em;
+  height: 50px;
+  width: 50px;
+}
+
+/* placeholders */
+
+#piedra-us,
+#papel-us,
+#tijera-us {
+  background-color: green;
+  height: 100px;
+  width: 100px;
+}
+#piedra-pc,
+#papel-pc,
+#tijera-pc {
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+}
+#piedra-us:hover,
+#papel-us:hover,
+#tijera-us:hover {
+  filter: contrast(100);
+  cursor: pointer;
+}
+
+#piedra-pc:hover,
+#papel-pc:hover,
+#tijera-pc:hover {
+  cursor: not-allowed;
 }

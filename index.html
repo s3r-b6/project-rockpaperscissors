@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piedra, papel o tijeras!</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
     <script src="./rps.js"></script>
   </head>
 
@@ -17,18 +17,56 @@
       </p>
     </div>
     <div id="Contador">
+      <div>
+<!-- PLACHEOLDER -->      
+        <h1>Round 5</h1>
+      </div>
+      <div id="Marcador">
+<!-- PLACEHOLDER -->      
         <h2 class="Contador">1</h2>
         <h3 class="Contador">-</h3>
         <h2 class="Contador">2</h2>
-    </div>
-    <div id="app">
-      <div id="Botones">
-        <button id="piedra-b">Piedra</button>
-        <button id="papel-b">Papel</button>
-        <button id="tijera-b">Tijera</button>
       </div>
     </div>
-    <br />
+
+    <div id="app">
+      <div id="user-selection">
+<!-- El icono de la piedra también debería ser cuadrado-->
+        <div>
+          <button class="button" id="piedra-us">
+            <img class="rps-img" src="./rock.svg" />
+          </button>
+        </div>
+        <div>
+          <button class="button" id="papel-us">
+            <img class="rps-img" src="./paper.svg" />
+          </button>
+        </div>
+        <div>
+          <button class="button" id="tijera-us">
+            <img class="rps-img" src="./tijera.svg" />
+          </button>
+        </div>
+      </div>
+
+      <div id="comp-selection">
+        <div>
+          <button class="button" id="piedra-pc">
+            <img class="rps-img" src="./rock.svg" />
+          </button>
+        </div>
+        <div>
+          <button class="button" id="papel-pc">
+            <img class="rps-img" src="./paper.svg" />
+          </button>
+        </div>
+        <div>
+          <button class="button" id="tijera-pc">
+            <img class="rps-img" src="./tijera.svg" />
+          </button>
+        </div>
+
+      </div>
+    </div>
   </body>
 </html>
-
