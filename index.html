@@ -16,13 +16,14 @@
         Para jugar, dale al botón de empezar y selecciona usando los botones.
       </p>
     </div>
+
     <div id="Contador">
       <div>
-<!-- PLACHEOLDER -->      
+        <!-- PLACHEOLDER -->
         <h1>Round 5</h1>
       </div>
       <div id="Marcador">
-<!-- PLACEHOLDER -->      
+        <!-- PLACEHOLDER -->
         <h2 class="Contador">1</h2>
         <h3 class="Contador">-</h3>
         <h2 class="Contador">2</h2>
@@ -30,19 +31,23 @@
     </div>
 
     <div id="app">
+      <!-- Idea: Reemplazar todo el contenido de user y comp-selection cuando haya una elección, hasta la siguiente ronda -->
       <div id="user-selection">
-<!-- El icono de la piedra también debería ser cuadrado-->
+        <!-- El icono de la piedra también debería ser cuadrado-->
         <div>
+          <img class="user-selection-r" src="./rock.svg" />
           <button class="button" id="piedra-us">
             <img class="rps-img" src="./rock.svg" />
           </button>
         </div>
         <div>
+          <img class="user-selection-p" src="./paper.svg" />
           <button class="button" id="papel-us">
             <img class="rps-img" src="./paper.svg" />
           </button>
         </div>
         <div>
+          <img class="user-selection-s" src="./tijera.svg" />
           <button class="button" id="tijera-us">
             <img class="rps-img" src="./tijera.svg" />
           </button>
@@ -65,8 +70,12 @@
             <img class="rps-img" src="./tijera.svg" />
           </button>
         </div>
-
       </div>
+    </div>
+    <!-- En caso de que sea capaz de hacer que el pick reemplace las posibilidades -->
+
+    <div id="replay">
+      <button id="replay-b">Jugar otra ronda?</button>
     </div>
   </body>
 </html>

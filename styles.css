@@ -10,11 +10,8 @@
   background-color: aquamarine;
 }
 
-#Round{
-}
 #Contador {
-    text-align: center;
-
+  text-align: center;
   padding: 3em;
   display: flex;
   flex-direction: column;
@@ -48,7 +45,7 @@ h2.Contador {
 
 #user-selection {
   display: flex;
-  flex: 1;
+  flex: 1 0 auto;
   align-content: center;
   justify-content: center;
   gap: 2em;
@@ -56,7 +53,7 @@ h2.Contador {
 
 #comp-selection {
   display: flex;
-  flex: 1;
+  flex: 1 0 auto;
   align-content: center;
   justify-content: center;
   gap: 2em;
@@ -74,6 +71,10 @@ h2.Contador {
   height: 25px;
 }
 
+.button.invisible {
+    display:none; !important
+}
+
 .rps-img {
   padding: 1em;
   height: 50px;
@@ -85,6 +86,7 @@ h2.Contador {
 #piedra-us,
 #papel-us,
 #tijera-us {
+  border: 2px solid black;
   background-color: green;
   height: 100px;
   width: 100px;
@@ -92,6 +94,7 @@ h2.Contador {
 #piedra-pc,
 #papel-pc,
 #tijera-pc {
+  border: 2px solid black;
   height: 100px;
   width: 100px;
   background-color: grey;
@@ -107,4 +110,28 @@ h2.Contador {
 #papel-pc:hover,
 #tijera-pc:hover {
   cursor: not-allowed;
+}
+
+#replay {
+  text-align: center;
+}
+
+#replay-b {
+  border-width: 0px;
+  border-radius: 1.2em;
+  background-color: #4383c3;
+  color: rgb(228, 228, 228);
+  margin: 4em;
+  width: 100px;
+  height: 100px;
+}
+
+#replay-b:hover {
+  cursor: pointer;
+}
+
+
+
+.user-selection-r, .user-selection-p, .user-selection-s {
+    display:none;
 }
