@@ -35,24 +35,50 @@ function PlayRPS() {
   }
 
   //la idea es cambiar los elementos visibles por invisibles y viceversa.
-  function showUserPick() {
-    const rPlace = document.getElementsByClassName("user-selection-r");
-    const pPlace = document.getElementsByClassName("user-selection-p");
-    const sPlace = document.getElementsByClassName("user-selection-s");
+  function showPicks() {
+    const rPlaceU = document.getElementsByClassName("user-selection-r");
+    const pPlaceU = document.getElementsByClassName("user-selection-p");
+    const sPlaceU = document.getElementsByClassName("user-selection-s");
+
+    const rPlaceC = document.getElementsByClassName("comp-selection-r");
+    const pPlaceC = document.getElementsByClassName("comp-selection-p");
+    const sPlaceC = document.getElementsByClassName("comp-selection-s");
+
+    //USER
     setTimeout(() => {
       //hace invisibles los botones
-      var elems = document.querySelectorAll(".button");
+      var elems = document.querySelectorAll(".button.user");
       [].forEach.call(elems, function (el) {
         el.className += " invisible";
       });
+      //hace aparecer el pick
       if ((userChoice = 0)) {
-        rPlace.className.replace("finalPick");
+        rPlaceU.className.replace("finalPick");
       } else if ((userChoice = 1)) {
-        pPlace.className.replace("finalPick");
+        pPlaceU.className.replace("finalPick");
       } else if ((userChoice = 2)) {
-        sPlace.className.replace("finalPick");
+        sPlaceU.className.replace("finalPick");
       }
+
+      //
     }, 200);
+
+    //PC
+    setTimeout(() => {
+      //hace invisibles los botones
+      var elems = document.querySelectorAll(".button.pc");
+      [].forEach.call(elems, function (el) {
+        el.className += " invisible";
+      });
+      //hace aparecer el pick
+      if ((CompChoice = 0)) {
+        rPlaceC.className.replace("finalPick");
+      } else if ((CompChoice = 1)) {
+        pPlaceC.className.replace("finalPick");
+      } else if ((CompChoice = 2)) {
+        sPlaceC.className.replace("finalPick");
+      }
+    }, 600);
   }
 
   const piedra = document.getElementById("piedra-us");
@@ -61,18 +87,20 @@ function PlayRPS() {
 
   //(https://stackoverflow.com/a/24050476) Para pasarle un argumento al eventhandler inline hay que usar una función anónima
   //Tb esta es la razón por la que el addEventListener no estaba funcionando
+  // Tb se puede usar el bind (pasa a la función un array con parámetros):
+  //tijera.onclick = GameRPS.bind(this, [2]);
 
   piedra.onclick = () => {
     GameRPS(0);
-    showUserPick();
+    showPicks();
   };
   papel.onclick = () => {
     GameRPS(1);
-    showUserPick();
+    showPicks();
   };
   tijera.onclick = () => {
     GameRPS(2);
-    showUserPick();
+    showPicks();
   };
 
   document.querySelector("#replay-b").onclick = () => {
@@ -80,12 +108,8 @@ function PlayRPS() {
     [].forEach.call(elems, function (el) {
       el.className = "button";
     });
+
+    //TODO: arreglar la función que hace aparecer los picks.
   };
-  // Tb se puede usar el bind (pasa a la función un array con parámetros):
-  //tijera.onclick = GameRPS.bind(this, [2]);
-
-  //idea: cambiar con css la opacidad de los items de forma que aparezca la solución en lugar de spawnearla?
-
-  //el botón de restart aquí lo que haría sería restablecer?
 }
 window.onload = PlayRPS;

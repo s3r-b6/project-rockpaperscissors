@@ -132,6 +132,6 @@ h2.Contador {
 
 
 
-.user-selection-r, .user-selection-p, .user-selection-s {
+.user-selection-r, .user-selection-p, .user-selection-s, .comp-selection-r, .comp-selection-p, .comp-selection-s {
     display:none;
 }
