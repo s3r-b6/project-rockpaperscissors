@@ -44,13 +44,18 @@ function PlayRPS() {
     const pPlaceC = document.getElementsByClassName("comp-selection-p");
     const sPlaceC = document.getElementsByClassName("comp-selection-s");
 
-    //USER
-    setTimeout(() => {
-      //hace invisibles los botones
-      var elems = document.querySelectorAll(".button.user");
+    //hace invisibles los botones
+    function makeinv(item) {
+      let elems = document.querySelectorAll(item);
       [].forEach.call(elems, function (el) {
         el.className += " invisible";
       });
+    };
+
+    //USER
+    setTimeout(() => {
+      makeinv(".button.user");
+
       //hace aparecer el pick
       if ((userChoice = 0)) {
         rPlaceU.className.replace("finalPick");
@@ -66,10 +71,8 @@ function PlayRPS() {
     //PC
     setTimeout(() => {
       //hace invisibles los botones
-      var elems = document.querySelectorAll(".button.pc");
-      [].forEach.call(elems, function (el) {
-        el.className += " invisible";
-      });
+      makeinv(".button.pc");
+
       //hace aparecer el pick
       if ((CompChoice = 0)) {
         rPlaceC.className.replace("finalPick");
@@ -90,26 +93,26 @@ function PlayRPS() {
   // Tb se puede usar el bind (pasa a la función un array con parámetros):
   //tijera.onclick = GameRPS.bind(this, [2]);
 
-  piedra.onclick = () => {
+  piedra.addEventListener("click", () => {
     GameRPS(0);
     showPicks();
-  };
-  papel.onclick = () => {
+  });
+  papel.addEventListener("click", () => {
     GameRPS(1);
     showPicks();
-  };
-  tijera.onclick = () => {
+  });
+  tijera.addEventListener("click", () => {
     GameRPS(2);
     showPicks();
-  };
+  });
 
-  document.querySelector("#replay-b").onclick = () => {
+  document.querySelector("#replay-b").addEventListener("click", () => {
     var elems = document.querySelectorAll(".button");
     [].forEach.call(elems, function (el) {
-      el.className = "button";
+      el.classList.remove("invisible");
     });
 
     //TODO: arreglar la función que hace aparecer los picks.
-  };
+  });
 }
 window.onload = PlayRPS;

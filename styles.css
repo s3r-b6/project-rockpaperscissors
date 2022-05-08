@@ -71,7 +71,7 @@ h2.Contador {
   height: 25px;
 }
 
-.button.invisible {
+.invisible {
     display:none; !important
 }
 
