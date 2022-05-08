@@ -1,9 +1,8 @@
-// Piedra:0 | Papel:1 | Tijera: 2
-// 2>1 => gana 1 (piedra)
-// 3>2 => gana 2 (tijera)
-// 1>3 ?????
+// Piedra:0 | Papel:1 | Tijera: 2  || 2>1 || 3>2 || 1>3 ?????????
+
+//función que contiene todo el código
 function PlayRPS() {
-  let CompChoice;
+  //función que genera aleatoriamente el pick del ordenador
   function computerPick() {
     let random = Math.floor(Math.random() * 10);
     console.log(random);
@@ -16,7 +15,7 @@ function PlayRPS() {
     }
   }
 
-  /*
+  /* modular arithmetic:
     no entiendo bien el concepto, pero funciona; esta es la demostración más fácil pero  (https://math.stackexchange.com/q/391185):
     % 3, option k beats option k+1 and is beaten by option k−1
 
@@ -34,23 +33,29 @@ function PlayRPS() {
     }
   }
 
-  //la idea es cambiar los elementos visibles por invisibles y viceversa.
+  //hace invisibles los botones
+  function makeinv(item) {
+    let elems = document.querySelectorAll(item);
+    [].forEach.call(elems, function (el) {
+      el.className += " invisible";
+    });
+  }
+  //hace visibles los botones
+  function makevis(item) {
+    let elems = document.querySelectorAll(item);
+    [].forEach.call(elems, function (el) {
+      el.classList.remove("invisible");
+    });
+  }
+
   function showPicks() {
-    const rPlaceU = document.getElementsByClassName("user-selection-r");
-    const pPlaceU = document.getElementsByClassName("user-selection-p");
-    const sPlaceU = document.getElementsByClassName("user-selection-s");
+    let rPlaceU = document.querySelector(".user-selection-r");
+    let pPlaceU = document.querySelector(".user-selection-p");
+    let sPlaceU = document.querySelector(".user-selection-s");
 
-    const rPlaceC = document.getElementsByClassName("comp-selection-r");
-    const pPlaceC = document.getElementsByClassName("comp-selection-p");
-    const sPlaceC = document.getElementsByClassName("comp-selection-s");
-
-    //hace invisibles los botones
-    function makeinv(item) {
-      let elems = document.querySelectorAll(item);
-      [].forEach.call(elems, function (el) {
-        el.className += " invisible";
-      });
-    };
+    let rPlaceC = document.querySelector(".comp-selection-r");
+    let pPlaceC = document.querySelector(".comp-selection-p");
+    let sPlaceC = document.querySelector(".comp-selection-s");
 
     //USER
     setTimeout(() => {
@@ -58,11 +63,11 @@ function PlayRPS() {
 
       //hace aparecer el pick
       if ((userChoice = 0)) {
-        rPlaceU.className.replace("finalPick");
+        rPlaceU.classList.replace("f-inv", "f-vis");
       } else if ((userChoice = 1)) {
-        pPlaceU.className.replace("finalPick");
+        pPlaceU.classList.replace("f-inv", "f-vis");
       } else if ((userChoice = 2)) {
-        sPlaceU.className.replace("finalPick");
+        sPlaceU.classList.replace("f-inv", "f-vis");
       }
 
       //
@@ -75,11 +80,11 @@ function PlayRPS() {
 
       //hace aparecer el pick
       if ((CompChoice = 0)) {
-        rPlaceC.className.replace("finalPick");
+        rPlaceC.classList.replace("f-inv", "f-vis");
       } else if ((CompChoice = 1)) {
-        pPlaceC.className.replace("finalPick");
+        pPlaceC.classList.replace("f-inv", "f-vis");
       } else if ((CompChoice = 2)) {
-        sPlaceC.className.replace("finalPick");
+        sPlaceC.classList.replace("f-inv", "f-vis");
       }
     }, 600);
   }
@@ -106,13 +111,18 @@ function PlayRPS() {
     showPicks();
   });
 
-  document.querySelector("#replay-b").addEventListener("click", () => {
-    var elems = document.querySelectorAll(".button");
-    [].forEach.call(elems, function (el) {
-      el.classList.remove("invisible");
-    });
+  //if bool partida terminada = true then make visible the replay button?
 
-    //TODO: arreglar la función que hace aparecer los picks.
+  document.querySelector("#replay-b").addEventListener("click", () => {
+    //vuelve al pick invisible
+    let elements = document.querySelectorAll(".f-vis");
+    [].forEach.call(elements, function (el) {
+      el.classList.replace("f-vis", "f-inv");
+    });
+    //vuelve visibles a los botones
+    setTimeout(() => makevis(".button"), 200);
   });
+
+  //TODO: entender el scope porque esto es un desastre.
 }
 window.onload = PlayRPS;

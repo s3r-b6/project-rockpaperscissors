@@ -72,7 +72,7 @@ h2.Contador {
 }
 
 .invisible {
-    display:none; !important
+  display: none !important;
 }
 
 .rps-img {
@@ -130,8 +130,17 @@ h2.Contador {
   cursor: pointer;
 }
 
+.user-selection-r.f-inv,
+.user-selection-p.f-inv,
+.user-selection-s.f-inv,
+.comp-selection-r.f-inv,
+.comp-selection-p.f-inv,
+.comp-selection-s.f-inv {
+  display: none;
+}
 
-
-.user-selection-r, .user-selection-p, .user-selection-s, .comp-selection-r, .comp-selection-p, .comp-selection-s {
-    display:none;
+.f-vis {
+  background-color: rgba(105, 90, 205, 0.466);
+  width: 200px;
+  height: 200px;
 }
