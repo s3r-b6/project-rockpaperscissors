@@ -13,20 +13,20 @@
     <div id="Descripcion">
       <h1>Piedra, papel o tijeras!</h1>
       <p>
-        Para jugar, dale al botón de empezar y selecciona usando los botones.
+        Para jugar, dale al botón de empezar y selecciona usando los botones. Los empates no cuentan como ronda. Se juega a 5 rondas.
       </p>
     </div>
 
     <div id="Contador">
       <div>
         <!-- PLACHEOLDER -->
-        <h1>Round 5</h1>
+        <h1 id="contador-rondas">Round 5</h1>
       </div>
       <div id="Marcador">
         <!-- PLACEHOLDER -->
-        <h2 class="Contador">1</h2>
+        <h2 class="Contador" id="player-points">0</h2>
         <h3 class="Contador">-</h3>
-        <h2 class="Contador">2</h2>
+        <h2 class="Contador" id="computer-points">0</h2>
       </div>
     </div>
 
@@ -74,7 +74,7 @@
       </div>
     </div>
     <div id="replay">
-      <button id="replay-b">Jugar otra ronda?</button>
+      <button id="replay-b" class="f-inv">Jugar otra ronda?</button>
     </div>
   </body>
 </html>

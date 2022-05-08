@@ -128,6 +128,8 @@ h2.Contador {
   margin: 4em;
   width: 100px;
   height: 100px;
+  animation-name: transp;
+  animation-duration: 600ms;
 }
 
 #replay-b:hover {
@@ -139,13 +141,17 @@ h2.Contador {
 .user-selection-s.f-inv,
 .comp-selection-r.f-inv,
 .comp-selection-p.f-inv,
-.comp-selection-s.f-inv {
+.comp-selection-s.f-inv, #replay-b.f-inv {
   display: none;
 }
 
 @keyframes transp {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .f-vis {
@@ -154,5 +160,4 @@ h2.Contador {
   height: 200px;
   animation-name: transp;
   animation-duration: 600ms;
-
 }

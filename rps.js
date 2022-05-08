@@ -23,15 +23,25 @@ function PlayRPS() {
 
   var UserChoice;
   var CompChoice;
+  var pointsuser = 0;
+  var pointspc = 0;
 
   //función principal
   function GameRPS() {
     if (UserChoice == CompChoice) {
-      document.body.append("Empate!");
+      round--
     } else if ((UserChoice + 1) % 3 == CompChoice % 3) {
-      document.body.append("Gana el PC!");
+      pointspc++;
+      document.getElementById("computer-points").innerText = pointspc;
+      if(pointspc==3){
+        //EndGame
+      }
     } else {
-      document.body.append("Tú ganas!");
+      pointsuser++;
+      document.getElementById("player-points").innerText = pointsuser;
+      if(pointsuser==3){
+        //EndGame
+      }
     }
   }
 
@@ -63,6 +73,9 @@ function PlayRPS() {
     //USER
     setTimeout(() => {
       makeinv(".button.user");
+
+      //hace aparecer el botón de replay
+      document.getElementById("replay-b").classList.remove("f-inv");
 
       //hace aparecer el pick
       if (UserChoice == 0) {
@@ -99,41 +112,56 @@ function PlayRPS() {
   // Tb se puede usar el bind (pasa a la función un array con parámetros):
   //tijera.onclick = GameRPS.bind(this, [2]);
 
+  var round = 0;
+
+  function addRound() {
+    round++;
+    document.getElementById("contador-rondas").innerText = "Ronda " + round;
+  }
+
   //log debug
   piedra.addEventListener("click", () => {
     UserChoice = 0;
     CompChoice = computerPick();
+
     console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
+
     GameRPS();
     showPicks();
+    addRound();
   });
   papel.addEventListener("click", () => {
     UserChoice = 1;
     CompChoice = computerPick();
+
     console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
+
     GameRPS();
     showPicks();
+    addRound();
   });
   tijera.addEventListener("click", () => {
     UserChoice = 2;
     CompChoice = computerPick();
+
     console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
+
     GameRPS();
     showPicks();
+    addRound();
   });
 
   //if bool partida terminada = true then make visible the replay button?
-
   document.querySelector("#replay-b").addEventListener("click", () => {
     //vuelve al pick invisible
     let elements = document.querySelectorAll(".f-vis");
     [].forEach.call(elements, function (el) {
       el.classList.replace("f-vis", "f-inv");
     });
+    //se vuelve a si mismo invisible
+    document.getElementById("replay-b").classList.add("f-inv");
     //vuelve visibles a los botones
     setTimeout(() => makevis(".button"), 200);
   });
-
-  //TODO: entender el scope porque esto es un desastre.
 }
 window.onload = PlayRPS;
