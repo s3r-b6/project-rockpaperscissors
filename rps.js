@@ -28,20 +28,28 @@ function PlayRPS() {
 
   //función principal
   function GameRPS() {
+    //empate
     if (UserChoice == CompChoice) {
-      round--
+      round--;
     } else if ((UserChoice + 1) % 3 == CompChoice % 3) {
       pointspc++;
       document.getElementById("computer-points").innerText = pointspc;
-      if(pointspc==3){
-        //EndGame
+      if (pointspc == 3) {
+        restart("El ordenador gana la partida!");
       }
     } else {
       pointsuser++;
       document.getElementById("player-points").innerText = pointsuser;
-      if(pointsuser==3){
-        //EndGame
+      if (pointsuser == 3) {
+        restart("Felicidades, tú ganas!");
       }
+    }
+    function restart(winner) {
+      //botón de replay invisible
+      //summon winnerscreen; add winner text
+      document.getElementById("replay-b").classList.add("f-inv");
+      document.getElementById("WinnerScreen").classList.remove("inv");
+      document.getElementById("Winner").innerText(winner);
     }
   }
 
@@ -162,6 +170,16 @@ function PlayRPS() {
     document.getElementById("replay-b").classList.add("f-inv");
     //vuelve visibles a los botones
     setTimeout(() => makevis(".button"), 200);
+  });
+  //restart partida
+  document.querySelector("#replay-g").addEventListener("click", () => {
+    document.querySelector("#WinnerScreen").classList.add("inv");
+    pointspc = 0;
+    pointsuser = 0;
+    round = 0;
+    document.getElementById("contador-rondas").innerText = 'Ronda '+round;
+    document.getElementById("computer-points").innerText = pointspc;
+    document.getElementById("player-points").innerText = pointsuser;
   });
 }
 window.onload = PlayRPS;
