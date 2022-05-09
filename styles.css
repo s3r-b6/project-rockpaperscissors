@@ -48,50 +48,39 @@ h2.Contador {
   width: 100px;
 }
 
-#app {
+#app, #button-user-container,
+#button-comp-container {
   display: flex;
   flex-direction: row;
-  padding: 1em;
   align-content: center;
   justify-content: center;
+}
+
+#comp-selection, #user-selection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  align-content: center;
+  justify-content: center;
+  gap: 2em;
+  padding-top: 1em;
+  padding-bottom: 2em;
 }
 
 #user-selection {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  align-content: center;
-  justify-content: center;
-  gap: 2em;
-  padding-top: 1em;
-  padding-bottom: 2em;
-  margin-left: 5em;
-  margin-right: 5em;
+  animation-name: transp;
+  animation-duration: 400ms;
   border-bottom: 1px solid #c5c6c7;
 }
 
-#button-user-container,
-#button-comp-container {
-  display: flex;
-
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
+#app{
+  padding: 1em;
 }
 
 #comp-selection {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  align-content: center;
-  justify-content: center;
-  gap: 2em;
   animation-name: transp;
   animation-duration: 600ms;
-  padding-top: 1em;
-  padding-bottom: 2em;
 }
 
 #comp-text,
@@ -101,11 +90,10 @@ h2.Contador {
 }
 
 .button {
-  border-width: 0px;
-  width: 50px;
-  height: 25px;
-  animation-name: transp;
-  animation-duration: 400ms;
+  border: 2px solid #c5c6c7;
+  height: 100px;
+  width: 100px;
+  margin: 1em;
 }
 
 .invisible {
@@ -116,40 +104,26 @@ h2.Contador {
   padding: 1em;
   height: 50px;
   width: 50px;
-  background-color: #1f2833;
+  background-color: ;
 }
-
-/* placeholders */
 
 #piedra-us,
 #papel-us,
 #tijera-us {
-  border: 2px solid #c5c6c7;
-  background-color: #66fcf1;
-  height: 100px;
-  width: 100px;
-  margin: 1em;
+  background-color: #aebfd8;
 }
+
 #piedra-pc,
 #papel-pc,
 #tijera-pc {
-  border: 2px solid #c5c6c7;
-  height: 100px;
-  width: 100px;
-  background-color: rgb(97, 120, 151);
-  margin: 1em;
+  background-color: #617897;
 }
+
 #piedra-us:hover,
 #papel-us:hover,
 #tijera-us:hover {
-  filter: contrast(100);
+  background-color:#b8a6e2;
   cursor: pointer;
-}
-
-#piedra-pc:hover,
-#papel-pc:hover,
-#tijera-pc:hover {
-  cursor: not-allowed;
 }
 
 #replay {
@@ -260,14 +234,13 @@ h2.Contador {
 }
 
 #Winner {
-  background-color: #4383c3;
+  background-color: transparent;
   font-size: 64px;
 }
 
 #replay-g {
-  border-width: 3px;
+  border: 3px solid aliceblue;
   border-radius: 2em;
-  border-color: aliceblue;
   background-color: #095097;
   color: rgb(228, 228, 228);
   margin: 4em;

@@ -48,7 +48,7 @@ function PlayRPS() {
       //summon winnerscreen; add winner text
       document.getElementById("replay-b").classList.add("f-inv");
       document.getElementById("WinnerScreen").classList.remove("inv");
-      document.getElementById("Winner").innerText(winner);
+      document.getElementById("Winner").innerText = winner;
     }
   }
 
@@ -126,7 +126,7 @@ function PlayRPS() {
     document.getElementById("contador-rondas").innerText = "Ronda " + round;
   }
 
-  //log debug
+  //Botones e inicializadores
   piedra.addEventListener("click", () => {
     UserChoice = 0;
     CompChoice = computerPick();
@@ -158,7 +158,7 @@ function PlayRPS() {
     addRound();
   });
 
-  //if bool partida terminada = true then make visible the replay button?
+  //botón de volver a jugar
   document.querySelector("#replay-b").addEventListener("click", () => {
     //vuelve al pick invisible
     let elements = document.querySelectorAll(".f-vis");
@@ -170,13 +170,13 @@ function PlayRPS() {
     //vuelve visibles a los botones
     setTimeout(() => makevis(".button"), 200);
   });
-  //restart partida
+  //restart
   document.querySelector("#replay-g").addEventListener("click", () => {
     document.querySelector("#WinnerScreen").classList.add("inv");
     pointspc = 0;
     pointsuser = 0;
     round = 0;
-    document.getElementById("contador-rondas").innerText = 'Ronda '+round;
+    document.getElementById("contador-rondas").innerText = "Ronda " + round;
     document.getElementById("computer-points").innerText = pointspc;
     document.getElementById("player-points").innerText = pointsuser;
   });
