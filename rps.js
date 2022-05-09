@@ -20,7 +20,6 @@ function PlayRPS() {
 
     muy interesante: https://en.wikipedia.org/wiki/Modular_arithmetic
   */
-
   var UserChoice;
   var CompChoice;
   var pointsuser = 0;

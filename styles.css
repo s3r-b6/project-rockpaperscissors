@@ -3,8 +3,13 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0px;
   padding: 0px;
-  background-color: #0b0c10;
   color: #dfdfdf;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to top left, #0b0c10, #1d2029);
 }
 
 #Descripcion {
@@ -200,13 +205,17 @@ h2.Contador {
   }
 }
 
-.user-selection-p.f-vis, .user-selection-r.f-vis, .user-selection-s.f-vis{
+.user-selection-p.f-vis,
+.user-selection-r.f-vis,
+.user-selection-s.f-vis {
   border: 2px solid #c5c6c7;
   height: 85px;
   width: 85px;
   background-color: #66fcf1;
 }
-.comp-selection-p.f-vis, .comp-selection-r.f-vis, .comp-selection-s.f-vis{
+.comp-selection-p.f-vis,
+.comp-selection-r.f-vis,
+.comp-selection-s.f-vis {
   border: 2px solid #c5c6c7;
   height: 85px;
   width: 85px;
