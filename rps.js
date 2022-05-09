@@ -20,10 +20,10 @@ function PlayRPS() {
 
     muy interesante: https://en.wikipedia.org/wiki/Modular_arithmetic
   */
-  var UserChoice;
-  var CompChoice;
-  var pointsuser = 0;
-  var pointspc = 0;
+  let UserChoice;
+  let CompChoice;
+  let pointsuser = 0;
+  let pointspc = 0;
 
   //función principal
   function GameRPS() {
@@ -115,23 +115,21 @@ function PlayRPS() {
   const tijera = document.getElementById("tijera-us");
 
   //(https://stackoverflow.com/a/24050476) Para pasarle un argumento al eventhandler inline hay que usar una función anónima
-  //Tb esta es la razón por la que el addEventListener no estaba funcionando
-  // Tb se puede usar el bind (pasa a la función un array con parámetros):
-  //tijera.onclick = GameRPS.bind(this, [2]);
 
-  var round = 0;
+  let round = 0;
 
   function addRound() {
     round++;
     document.getElementById("contador-rondas").innerText = "Ronda " + round;
   }
 
-  //Botones e inicializadores
+  // Botones e inicializadores
+  // debugger
   piedra.addEventListener("click", () => {
     UserChoice = 0;
     CompChoice = computerPick();
 
-    console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
+    //console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
 
     GameRPS();
     showPicks();
@@ -141,7 +139,7 @@ function PlayRPS() {
     UserChoice = 1;
     CompChoice = computerPick();
 
-    console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
+    //console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
 
     GameRPS();
     showPicks();
@@ -151,7 +149,7 @@ function PlayRPS() {
     UserChoice = 2;
     CompChoice = computerPick();
 
-    console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
+    //console.log("us:" + UserChoice + " vs " + "pc:" + CompChoice);
 
     GameRPS();
     showPicks();
@@ -179,6 +177,14 @@ function PlayRPS() {
     document.getElementById("contador-rondas").innerText = "Ronda " + round;
     document.getElementById("computer-points").innerText = pointspc;
     document.getElementById("player-points").innerText = pointsuser;
+    let elements = document.querySelectorAll(".f-vis");
+    [].forEach.call(elements, function (el) {
+      el.classList.replace("f-vis", "f-inv");
+    });
+    //se vuelve a si mismo invisible
+    document.getElementById("replay-b").classList.add("f-inv");
+    //vuelve visibles a los botones
+    makevis(".button");
   });
 }
 window.onload = PlayRPS;
